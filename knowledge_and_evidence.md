@@ -141,7 +141,9 @@ python3 main.py
 
 5. Examining `smiley.py`, provide an example of a class variable and an instance variable (attribute). Explain **why** one is defined as a class variable and the other as an instance variable.
 
+
 > In smiley.py, an example of a class variable is WHITE = (255, 255, 255) and an example of an instance variable is self.sense_hat = SenseHat(). The class variable is defined outside any method within the class, making it a shared variable across all instances of the class, whereas the instance variable is defined within a method of a class and is unique to the instance of that class.
+
 >
 
 6. Examine `happy.py`, and identify the constructor (initializer) for the `Happy` class:
@@ -229,6 +231,7 @@ Compare and contrast the classes Happy and Sad.
    > The Smiley class directly interacts with the functionalities of the SenseHat.
    >
 3. Discuss the hiding of the SenseHAT in terms of encapsulation (100-200 Words)
+
    > The Smiley class utilises the functionality of the SenseHat class when the Smiley class is instantiated, and in doing so it becomes an instance variable that is accessed by calling the dim_display or show methods of the instantiated Smiley class. Seeing as the Smiley classes methods are the only way to access the functionality of the SenseHat class, this is said to hide the SenseHat class by having the Smiley class encapsulate the SenseHat class. This creates a structured way of accessing the functionality of the SenseHat class, not only protecting the SenseHat class from direct manipulation or changes in the process, but also simplifies a somewhat complex program by compartmentalisation and code segregation making it easier to maintain, easier to make improvements, and easier for another coder or high level user to understand. 
    >
 
@@ -244,6 +247,7 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
 >
 
 2. For those smileys that blink, does the author expect them to blink in the same way? Explain.
+
 
 > No. The addition of an optional argument to the blink method that controls the speed at which a Smiley blinks infers that not all Smiley's blink the same way.
 >
