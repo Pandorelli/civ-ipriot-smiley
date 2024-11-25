@@ -141,7 +141,7 @@ python3 main.py
 
 5. Examining `smiley.py`, provide an example of a class variable and an instance variable (attribute). Explain **why** one is defined as a class variable and the other as an instance variable.
 
-> In smiley.py, an example of a class variable is WHITE = (255, 255, 255) and an example of an instance variable is self.sense_hat = SenseHat(). The class variable is defined within the class but outside any method, whereas the instance variable is defined within a method of a class and is unique to the instance of that class.
+> In smiley.py, an example of a class variable is WHITE = (255, 255, 255) and an example of an instance variable is self.sense_hat = SenseHat(). The class variable is defined outside any method within the class, making it a shared variable across all instances of the class, whereas the instance variable is defined within a method of a class and is unique to the instance of that class.
 >
 
 6. Examine `happy.py`, and identify the constructor (initializer) for the `Happy` class:
@@ -229,7 +229,7 @@ Compare and contrast the classes Happy and Sad.
    > The Smiley class directly interacts with the functionalities of the SenseHat.
    >
 3. Discuss the hiding of the SenseHAT in terms of encapsulation (100-200 Words)
-   > By encapsulating the SenseHat class in the Smiley class, it protects it from direct access and manipulation from sub classes. All interactions within the Smiley class with the SenseHat class are either separate methods in the class or instantiated as variables within the instance of the Smiley class.
+   > The Smiley class utilises the functionality of the SenseHat class when the Smiley class is instantiated, and in doing so it becomes an instance variable that is accessed by calling the dim_display or show methods of the instantiated Smiley class. Seeing as the Smiley classes methods are the only way to access the functionality of the SenseHat class, this is said to hide the SenseHat class by having the Smiley class encapsulate the SenseHat class. This creates a structured way of accessing the functionality of the SenseHat class, not only protecting the SenseHat class from direct manipulation or changes in the process, but also simplifies a somewhat complex program by compartmentalisation and code segregation making it easier to maintain, easier to make improvements, and easier for another coder or high level user to understand. 
    >
 
 ### Sad Smileys Can’t Blink (Or Can They?)
@@ -245,7 +245,7 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
 
 2. For those smileys that blink, does the author expect them to blink in the same way? Explain.
 
-> No. By defining a draw_eyes method within a subclass of Smiley (eg the Happy and Sad), any future emoji is customizable to define the eyes differently, and hence blink in a different way. The addition of a timer also variable allows the blink to be actioned at a different speed.
+> No. The addition of an optional argument to the blink method that controls the speed at which a Smiley blinks infers that not all Smiley's blink the same way.
 >
 
 3. Referring to the implementation of blink in the Happy and Sad Smiley classes, give a brief explanation of what polymorphism is.
