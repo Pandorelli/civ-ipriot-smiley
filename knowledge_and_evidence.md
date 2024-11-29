@@ -248,8 +248,7 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
 
 2. For those smileys that blink, does the author expect them to blink in the same way? Explain.
 
-
-> No. The addition of an optional argument to the blink method that controls the speed at which a Smiley blinks infers that not all Smiley's blink the same way.
+> No. By creating an abstract blink method in the Blinkable class, the author is anticipating that different smileys may choose to implement a blink method in different ways.
 >
 
 3. Referring to the implementation of blink in the Happy and Sad Smiley classes, give a brief explanation of what polymorphism is.
